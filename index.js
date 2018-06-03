@@ -21,6 +21,10 @@ const cli = meow(`
       --dir Path to export all pools, all users to (defaults to current dir)
 `);
 
+if (!cli.input[0]) {
+  cli.showHelp();
+}
+
 const UserPoolId = cli.input[0];
 const region = UserPoolId.substring(0, UserPoolId.indexOf('_'));
 
