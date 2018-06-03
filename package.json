@@ -1,6 +1,6 @@
 {
   "name": "cognito-export-users",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI for exporting AWS Cogntito Users",
   "main": "index.js",
   "repository": {
@@ -17,7 +17,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "timer.js"
   ],
   "bin": {
     "cognito-export-users": "index.js"
