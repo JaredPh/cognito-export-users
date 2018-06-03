@@ -60,7 +60,7 @@ const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
 
     Users.forEach(item => stringify.write(item));
 
-    term(`request #${requestNumber}: `).green(`success`)(` - retrieved users (${userCount + 1} - ${userCount + Users.length})\n`);
+    term(`Request #${requestNumber}: `).green('success')(` - retrieved users (${userCount + 1} - ${userCount + Users.length})\n`);
 
     userCount += Users.length;
 
@@ -71,7 +71,7 @@ const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
 
     nextToken = PaginationToken;
   } catch (e) {
-    term(`request #${requestNumber} (attempt#: ${attemptNumber}): `).red(`fail - ${e.code}\n`);
+    term(`Request #${requestNumber} (attempt#: ${attemptNumber}): `).red(`fail - ${e.code}\n`);
 
     await time.wait();
     time.increaseWaitTime();
@@ -84,7 +84,7 @@ const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
   if (nextToken === undefined) {
     stringify.end();
     writeStream.end();
-    term.cyan('Export Finished');
+    term.cyan('Export Finished\n');
   } else {
     getUsers(nextToken, nextRequestNumber, nextAttemptNumber);
   }

@@ -1,6 +1,6 @@
 {
   "name": "cognito-export-users",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "CLI for exporting AWS Cogntito Users",
   "main": "index.js",
   "repository": {
