@@ -40,6 +40,8 @@ const stringify = JSONStream.stringify();
 
 stringify.pipe(writeStream);
 
+let userCount = 0;
+
 const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
   const promise = bluebird.resolve(cognitoIsp.listUsers({
     UserPoolId,
@@ -58,7 +60,9 @@ const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
 
     Users.forEach(item => stringify.write(item));
 
-    term(`request #${requestNumber}: `).green('success\n');
+    term(`request #${requestNumber}: `).green(`success`)(` - retrieved users (${userCount + 1} - ${userCount + Users.length})\n`);
+
+    userCount += Users.length;
 
     time.resetWaitTime();
 
