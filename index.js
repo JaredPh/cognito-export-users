@@ -6,9 +6,9 @@ const fs = require('fs');
 const JSONStream = require('JSONStream');
 const meow = require('meow');
 const path = require('path');
-
-const time = require('./timer');
 const term = require('terminal-kit').terminal;
+
+const time = require('./timer.js');
 
 const cli = meow(`
     Usage
