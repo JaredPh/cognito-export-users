@@ -84,6 +84,7 @@ const getUsers = async (token, requestNumber = 1, attemptNumber = 1) => {
   if (nextToken === undefined) {
     stringify.end();
     writeStream.end();
+    term.cyan('\n*******************\n*')('Export Finished').cyan(' *\n*******************');
   } else {
     getUsers(nextToken, nextRequestNumber, nextAttemptNumber);
   }
