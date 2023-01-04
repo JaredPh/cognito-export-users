@@ -24,7 +24,7 @@
     "aws-sdk": "^2.249.1",
     "bluebird": "^3.5.1",
     "meow": "^5.0.0",
-    "terminal-kit": "^1.17.6",
+    "terminal-kit": "^3.0.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
